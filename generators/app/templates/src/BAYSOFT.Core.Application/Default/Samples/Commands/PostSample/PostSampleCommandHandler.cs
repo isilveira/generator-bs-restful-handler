@@ -1,11 +1,11 @@
-using BAYSOFT.Core.Domain.Entities.<%= _Context %>;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
-using BAYSOFT.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
 using ModelWrapper.Extensions.Post;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Post<%= _Entity %>
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Post<%= _Entity %>
 {
     public class Post<%= _Entity %>CommandHandler : ApplicationRequestHandler<<%= _Entity %>, Post<%= _Entity %>Command, Post<%= _Entity %>CommandResponse>
     {

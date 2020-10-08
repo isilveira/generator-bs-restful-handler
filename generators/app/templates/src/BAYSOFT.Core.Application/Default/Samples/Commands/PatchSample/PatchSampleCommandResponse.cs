@@ -1,7 +1,7 @@
 using ModelWrapper;
-using BAYSOFT.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Patch<%= _Entity %>
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Patch<%= _Entity %>
 {
     public class Patch<%= _Entity %>CommandResponse : ApplicationResponse<<%= _Entity %>>
     {

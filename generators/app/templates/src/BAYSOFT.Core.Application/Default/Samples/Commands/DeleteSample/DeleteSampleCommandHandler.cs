@@ -1,13 +1,13 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BAYSOFT.Core.Domain.Entities.<%= _Context %>;
-using BAYSOFT.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Delete<%= _Entity %>
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Delete<%= _Entity %>
 {
     public class Delete<%= _Entity %>CommandHandler : ApplicationRequestHandler<<%= _Entity %>, Delete<%= _Entity %>Command, Delete<%= _Entity %>CommandResponse>
     {
@@ -22,9 +22,9 @@ namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.D
         }
         public override async Task<Delete<%= _Entity %>CommandResponse> Handle(Delete<%= _Entity %>Command request, CancellationToken cancellationToken)
         {
-            var id = request.Project(x => x.<%= _Entity %>ID);
+            var id = request.Project(x => x.<%= _EntityID %>);
 
-            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.<%= _Entity %>ID == id);
+            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.<%= _EntityID %> == id);
 
             if (data == null)
                 throw new Exception("<%= _Entity %> not found!");

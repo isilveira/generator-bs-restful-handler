@@ -1,11 +1,11 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModelWrapper.Extensions.FullSearch;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>sByFilter
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>sByFilter
 {
     public class Get<%= _Entity %>sByFilterQueryHandler : IRequestHandler<Get<%= _Entity %>sByFilterQuery, Get<%= _Entity %>sByFilterQueryResponse>
     {

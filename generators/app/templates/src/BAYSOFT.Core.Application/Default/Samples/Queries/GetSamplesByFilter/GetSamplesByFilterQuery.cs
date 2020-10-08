@@ -1,12 +1,12 @@
-using BAYSOFT.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>sByFilter
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>sByFilter
 {
     public class Get<%= _Entity %>sByFilterQuery : ApplicationRequest<<%= _Entity %>, Get<%= _Entity %>sByFilterQueryResponse>
     {
         public Get<%= _Entity %>sByFilterQuery()
         {
-            ConfigKeys(x => x.<%= _Entity %>ID);
+            ConfigKeys(x => x.<%= _EntityID %>);
             
             // Configures supressed properties & response properties
             //ConfigSuppressedProperties(x => x);

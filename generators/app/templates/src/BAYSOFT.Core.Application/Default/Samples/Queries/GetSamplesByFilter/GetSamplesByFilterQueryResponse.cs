@@ -1,7 +1,7 @@
 using ModelWrapper;
-using BAYSOFT.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>sByFilter
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>sByFilter
 {
     public class Get<%= _Entity %>sByFilterQueryResponse : ApplicationResponse<<%= _Entity %>>
     {

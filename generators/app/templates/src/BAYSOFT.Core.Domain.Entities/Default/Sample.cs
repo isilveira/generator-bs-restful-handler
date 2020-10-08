@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Domain.Entities.<%= _Context %>
+namespace <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>
 {
     public class <%= _Entity %> : DomainEntity
     {
-        public int <%= _Entity %>ID { get; set; }
+        public <%= _EntityIDType %> <%= _EntityID %> { get; set; }
         
         public <%= _Entity %>()
         {

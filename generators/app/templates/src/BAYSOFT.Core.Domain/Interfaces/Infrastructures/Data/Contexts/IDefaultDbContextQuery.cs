@@ -1,7 +1,7 @@
-﻿using BAYSOFT.Core.Domain.Entities.<%= _Context %>;
+﻿using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 using Microsoft.EntityFrameworkCore;
 
-namespace BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts
+namespace <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts
 {
     public interface <%= _ContextType %>Query
     {

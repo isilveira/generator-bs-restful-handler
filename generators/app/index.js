@@ -32,7 +32,7 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "_EntityName",
-        message: "Entities name (use ';' as separator)?",
+        message: "Entities info (Entity.{EntityID:{Type}};)?",
         default: "Sample"
       }
     ];
@@ -47,13 +47,24 @@ module.exports = class extends Generator {
     var entities = this.props._EntityName.split(";");
 
     for (var i = 0; i < entities.length; i++) {
+      var entityParts = entities[i].trim().split(".");
+      var entity = entityParts[0];
+      var entityIDParts = (entityParts[1] ? entityParts[1] : `${entity}ID`)
+        .trim()
+        .split(":");
+      var entityID = entityIDParts[0];
+      var entityIDType = entityIDParts[1] ? entityIDParts[1] : "int";
+
       var data = {
         _ProjectName: this.props._ProjectName,
         _Context: this.props._ContextName,
         _ContextType: this.iDbContext(this.props._ContextName),
-        _Collection: pluralize(entities[i].trim()),
-        _Entity: entities[i].trim()
+        _Collection: pluralize(entity.trim()),
+        _Entity: entity.trim(),
+        _EntityID: entityID.trim(),
+        _EntityIDType: entityIDType.trim()
       };
+
       this.startCopy(data);
     }
   }
@@ -312,8 +323,6 @@ module.exports = class extends Generator {
 
   copyGenericFile(_data, _fpFilenameOrigem, _fpFilenameDestino) {
     if (!_data) return;
-    console.log(_fpFilenameOrigem);
-    console.log(_fpFilenameDestino);
     this.fs.copyTpl(
       this.templatePath(_fpFilenameOrigem),
       this.destinationPath(_fpFilenameDestino),

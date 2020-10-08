@@ -1,7 +1,7 @@
 using ModelWrapper;
-using BAYSOFT.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Post<%= _Entity %>
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Post<%= _Entity %>
 {
     public class Post<%= _Entity %>CommandResponse : ApplicationResponse<<%= _Entity %>>
     {

@@ -1,13 +1,13 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModelWrapper.Extensions.Select;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>ByID
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>ByID
 {
     public class Get<%= _Entity %>ByIDQueryHandler : IRequestHandler<Get<%= _Entity %>ByIDQuery, Get<%= _Entity %>ByIDQueryResponse>
     {
@@ -18,10 +18,10 @@ namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Ge
         }
         public async Task<Get<%= _Entity %>ByIDQueryResponse> Handle(Get<%= _Entity %>ByIDQuery request, CancellationToken cancellationToken)
         {
-            var id = request.Project(x => x.<%= _Entity %>ID);
+            var id = request.Project(x => x.<%= _EntityID %>);
 
             var data = await Context.<%= _Collection %>
-                .Where(x => x.<%= _Entity %>ID == id)
+                .Where(x => x.<%= _EntityID %> == id)
                 .Select(request)
                 .AsNoTracking()
                 .SingleOrDefaultAsync();

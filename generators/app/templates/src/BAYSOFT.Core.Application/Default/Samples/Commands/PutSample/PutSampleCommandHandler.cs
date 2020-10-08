@@ -1,14 +1,14 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModelWrapper.Extensions.Put;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BAYSOFT.Core.Domain.Entities.<%= _Context %>;
-using BAYSOFT.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
 
-namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Put<%= _Entity %>
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Put<%= _Entity %>
 {
     public class Put<%= _Entity %>CommandHandler : ApplicationRequestHandler<<%= _Entity %>, Put<%= _Entity %>Command, Put<%= _Entity %>CommandResponse>
     {
@@ -23,8 +23,8 @@ namespace BAYSOFT.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.P
         }
         public override async Task<Put<%= _Entity %>CommandResponse> Handle(Put<%= _Entity %>Command request, CancellationToken cancellationToken)
         {
-            var id = request.Project(x => x.<%= _Entity %>ID);
-            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.<%= _Entity %>ID == id);
+            var id = request.Project(x => x.<%= _EntityID %>);
+            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.<%= _EntityID %> == id);
 
             if (data == null)
             {
