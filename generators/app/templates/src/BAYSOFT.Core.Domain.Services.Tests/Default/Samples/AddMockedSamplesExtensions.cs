@@ -2,11 +2,8 @@
 using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BAYSOFT.Core.Domain.Services.Tests.Default.Samples
 {
@@ -15,8 +12,8 @@ namespace BAYSOFT.Core.Domain.Services.Tests.Default.Samples
         private static IQueryable<Sample> GetSamplesCollection()
         {
             return new List<Sample> {
-                new Sample { },
-                new Sample { },
+                new Sample { Id = 1, Description = "Sample - 001" },
+                new Sample { Id = 2, Description = "Sample - 002" },
             }.AsQueryable();
         }
 
