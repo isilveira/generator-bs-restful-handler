@@ -75,6 +75,7 @@ module.exports = class extends Generator {
 
   startCopy(_data) {
     this.copyEntity(_data);
+    this.copyTestMock(_data);
     this.copyEntityValidator(_data);
     this.copyApplictionFiles(_data);
   }
@@ -83,6 +84,12 @@ module.exports = class extends Generator {
     if (!_data) return;
     let rde = this.entityPath;
     this.copyGenericEntity(rde, _data);
+  }
+
+  copyTestMock(_data) {
+    if (!_data) return;
+    let rdt = this.testsPath;
+    this.copyGenericTestMock(rdt, _data);
   }
 
   copyEntityValidator(_data) {
@@ -123,6 +130,8 @@ module.exports = class extends Generator {
     this.copyGenericIDomainServiceFile(rids, _data, command, false);
     let rds = this.domainServicePath;
     this.copyGenericDomainServiceFile(rds, _data, command, false);
+    let rdt = this.testsPath;
+    this.copyGenericDomainServiceTestFile(rdt, _data, command, false);
     this.copyGenericRequestFile(_root, _data, command, false);
     this.copyGenericResponseFile(_root, _data, command, false);
     this.copyGenericHandlerFile(_root, _data, command, false);
@@ -137,6 +146,8 @@ module.exports = class extends Generator {
     this.copyGenericIDomainServiceFile(rids, _data, command, false);
     let rds = this.domainServicePath;
     this.copyGenericDomainServiceFile(rds, _data, command, false);
+    let rdt = this.testsPath;
+    this.copyGenericDomainServiceTestFile(rdt, _data, command, false);
     this.copyGenericRequestFile(_root, _data, command, false);
     this.copyGenericResponseFile(_root, _data, command, false);
     this.copyGenericHandlerFile(_root, _data, command, false);
@@ -151,6 +162,8 @@ module.exports = class extends Generator {
     this.copyGenericIDomainServiceFile(rids, _data, command, false);
     let rds = this.domainServicePath;
     this.copyGenericDomainServiceFile(rds, _data, command, false);
+    let rdt = this.testsPath;
+    this.copyGenericDomainServiceTestFile(rdt, _data, command, false);
     this.copyGenericRequestFile(_root, _data, command, false);
     this.copyGenericResponseFile(_root, _data, command, false);
     this.copyGenericHandlerFile(_root, _data, command, false);
@@ -165,6 +178,8 @@ module.exports = class extends Generator {
     this.copyGenericIDomainServiceFile(rids, _data, command, false);
     let rds = this.domainServicePath;
     this.copyGenericDomainServiceFile(rds, _data, command, false);
+    let rdt = this.testsPath;
+    this.copyGenericDomainServiceTestFile(rdt, _data, command, false);
     this.copyGenericRequestFile(_root, _data, command, false);
     this.copyGenericResponseFile(_root, _data, command, false);
     this.copyGenericHandlerFile(_root, _data, command, false);
@@ -274,6 +289,27 @@ module.exports = class extends Generator {
     );
   }
 
+  copyGenericDomainServiceTestFile(_root, _data, _cq, _pluralize) {
+    if (!_data) return;
+    var dContext = "Default";
+    var dEntity = "Sample";
+    var dCollection = pluralize(dEntity);
+    var dCq = _cq(_pluralize ? dCollection : dEntity);
+    var cq = _cq(_pluralize ? _data._Collection : _data._Entity);
+    var oldFile = dCq + "ServiceTest.cs";
+    var newFile = cq + "ServiceTest.cs";
+    this.copyGenericFile(
+      _data,
+      path.join(_root("BAYSOFT"), dContext, dCollection, oldFile),
+      path.join(
+        _root(_data._ProjectName),
+        _data._Context,
+        _data._Collection,
+        newFile
+      )
+    );
+  }
+
   copyGenericDomainValidatorFile(_root, _data, _cq, _pluralize) {
     if (!_data) return;
     var dContext = "Default";
@@ -321,6 +357,21 @@ module.exports = class extends Generator {
     );
   }
 
+  copyGenericTestMock(_root, _data) {
+    if (!_data) return;
+    var dContext = "Default";
+    var dEntity = "Sample";
+    var oldCollection = pluralize(dEntity);
+    var newCollection = pluralize(_data._Entity);
+    var oldFile = "AddMocked" + oldCollection + "Extensions.cs";
+    var newFile = "AddMocked" + newCollection + "Extensions.cs";
+    this.copyGenericFile(
+      _data,
+      path.join(_root("BAYSOFT"), dContext, oldCollection, oldFile),
+      path.join(_root(_data._ProjectName), _data._Context, newCollection, newFile)
+    );
+  }
+
   copyGenericFile(_data, _fpFilenameOrigem, _fpFilenameDestino) {
     if (!_data) return;
     this.fs.copyTpl(
@@ -336,6 +387,10 @@ module.exports = class extends Generator {
 
   entityPath(project) {
     return `src/${project}.Core.Domain.Entities`;
+  }
+
+  testsPath(project) {
+    return `src/${project}.Core.Domain.Services.Tests`;
   }
 
   entityValidationPath(project) {

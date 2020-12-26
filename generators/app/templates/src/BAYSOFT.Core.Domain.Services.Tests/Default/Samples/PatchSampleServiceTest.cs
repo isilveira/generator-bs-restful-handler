@@ -1,82 +1,46 @@
-﻿using BAYSOFT.Core.Domain.Entities.Default;
-using BAYSOFT.Core.Domain.Exceptions;
-using BAYSOFT.Core.Domain.Services.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.DomainValidations.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.EntityValidations.Default;
-using BAYSOFT.Core.Domain.Validations.Specifications.Default.Samples;
+﻿using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Exceptions;
+using <%= _ProjectName %>.Core.Domain.Services.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Validations.Specifications.<%= _Context %>.<%= _Collection %>;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Domain.Services.Tests.Default.Samples
+namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Collection %>
 {
     [TestClass]
-    public class PatchSampleServiceTest
+    public class Patch<%= _Entity %>ServiceTest
     {
-        private PatchSampleService GetMockedPatchSampleService()
+        private Patch<%= _Entity %>Service GetMockedPatch<%= _Entity %>Service()
         {
-            var mockedDefaultDbContext = MockDefaultHelper
-                .GetMockedDbContext()
-                .AddMockedSamples();
+            var mocked<%= _Context %>DbContext = Mock<%= _Context %>Helper.GetMocked<%= _Context %>DbContext();
+            var mocked<%= _Context %>DbContextQuery = Mock<%= _Context %>Helper.GetMocked<%= _Context %>DbContextQuery();
 
-            var mockedDefaultDbContextQuery = MockDefaultHelper
-                .GetMockedDbContextQuery()
-                .AddMockedSamples();
+            var mocked<%= _Entity %>Validator = new <%= _Entity %>Validator();
 
-            var mockedSampleValidator = new SampleValidator();
+            var mockedPatch<%= _Entity %>SpecificationsValidator = new Patch<%= _Entity %>SpecificationsValidator();
 
-            var sampleDescriptionAlreadyExistsSpecification = new SampleDescriptionAlreadyExistsSpecification(
-                mockedDefaultDbContextQuery.Object);
-
-            var mockedPatchSampleSpecificationsValidator = new PatchSampleSpecificationsValidator(
-                sampleDescriptionAlreadyExistsSpecification);
-
-            var mockedPatchSampleService = new PatchSampleService(
-                mockedDefaultDbContext.Object,
-                mockedSampleValidator,
-                mockedPatchSampleSpecificationsValidator
+            var mockedPatch<%= _Entity %>Service = new Patch<%= _Entity %>Service(
+                mocked<%= _Context %>DbContext.Object,
+                mocked<%= _Entity %>Validator,
+                mockedPatch<%= _Entity %>SpecificationsValidator
                 );
 
-            return mockedPatchSampleService;
+            return mockedPatch<%= _Entity %>Service;
         }
 
         [TestMethod]
-        public async Task TestPatchSampleWithEmptyModelAsync()
+        public async Task TestPatch<%= _Entity %>ValidModelAsync()
         {
-            var mockedPatchSampleService = GetMockedPatchSampleService();
+            var mockedPatch<%= _Entity %>Service = GetMockedPatch<%= _Entity %>Service();
 
-            var mockedSample = new Sample { };
-
-            await Assert.ThrowsExceptionAsync<BusinessException>(() =>
-                mockedPatchSampleService.Run(mockedSample));
-        }
-
-        [TestMethod]
-        public async Task TestPatchSampleWithDuplicatedDescriptionOnSchoolAsync()
-        {
-            var mockedPatchSampleService = GetMockedPatchSampleService();
-
-            var mockedSample = new Sample
+            var mocked<%= _Entity %> = new <%= _Entity %>
             {
                 Id = 1,
-                Description = "Sample - 002"
             };
 
-            await Assert.ThrowsExceptionAsync<BusinessException>(() =>
-                mockedPatchSampleService.Run(mockedSample));
-        }
-
-        [TestMethod]
-        public async Task TestPatchSampleValidModelAsync()
-        {
-            var mockedPatchSampleService = GetMockedPatchSampleService();
-
-            var mockedSample = new Sample
-            {
-                Id = 1,
-                Description = "Sample - 003"
-            };
-
-            await mockedPatchSampleService.Run(mockedSample);
+            await mockedPatch<%= _Entity %>Service.Run(mocked<%= _Entity %>);
         }
     }
 }
