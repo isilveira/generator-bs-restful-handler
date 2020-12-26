@@ -1,10 +1,10 @@
 using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>sByFilter
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Collection %>ByFilter
 {
-    public class Get<%= _Entity %>sByFilterQuery : ApplicationRequest<<%= _Entity %>, Get<%= _Entity %>sByFilterQueryResponse>
+    public class Get<%= _Collection %>ByFilterQuery : ApplicationRequest<<%= _Entity %>, Get<%= _Collection %>ByFilterQueryResponse>
     {
-        public Get<%= _Entity %>sByFilterQuery()
+        public Get<%= _Collection %>ByFilterQuery()
         {
             ConfigKeys(x => x.<%= _EntityID %>);
             
