@@ -14,8 +14,13 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
     {
         private Patch<%= _Entity %>Service GetMockedPatch<%= _Entity %>Service()
         {
-            var mocked<%= _Context %>DbContext = Mock<%= _Context %>Helper.GetMocked<%= _Context %>DbContext();
-            var mocked<%= _Context %>DbContextQuery = Mock<%= _Context %>Helper.GetMocked<%= _Context %>DbContextQuery();
+            var mockedDbContext = Mock<%= _Context %>Helper
+                .GetMockedDbContext()
+                .AddMocked<%= _Collection %>>();
+
+            var mockedDbContextQuery = Mock<%= _Context %>Helper
+                .GetMockedDbContext()
+                .AddMocked<%= _Collection %>>();
 
             var mocked<%= _Entity %>Validator = new <%= _Entity %>Validator();
 

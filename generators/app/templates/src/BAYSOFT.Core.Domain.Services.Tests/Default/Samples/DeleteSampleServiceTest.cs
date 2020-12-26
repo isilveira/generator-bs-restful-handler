@@ -12,14 +12,16 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
     {
         private Delete<%= _Entity %>Service GetMockedDelete<%= _Entity %>Service()
         {
-            var mocked<%= _Context %>DbContext = Mock<%= _Context %>Helper.GetMocked<%= _Context %>DbContext();
+            var mockedDbContext = Mock<%= _Context %>Helper
+                .GetMockedDbContext()
+                .AddMocked<%= _Collection %>>();
 
             var mocked<%= _Entity %>Validator = new <%= _Entity %>Validator();
 
             var mockedDelete<%= _Entity %>SpecificationsValidator = new Delete<%= _Entity %>SpecificationsValidator();
 
             var mockedDelete<%= _Entity %>Service = new Delete<%= _Entity %>Service(
-                mocked<%= _Context %>DbContext.Object,
+                mockedDbContext.Object,
                 mocked<%= _Entity %>Validator,
                 mockedDelete<%= _Entity %>SpecificationsValidator
                 );

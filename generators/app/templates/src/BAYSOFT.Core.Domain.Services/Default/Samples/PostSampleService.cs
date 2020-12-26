@@ -2,7 +2,7 @@
 using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using <%= _ProjectName %>.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
 using <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Context %>.<%= _Collection %>;
-using <%= _ProjectName %>.Core.Domain.Validations.EntityValidations<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>;
 using System.Threading.Tasks;
 
 namespace <%= _ProjectName %>.Core.Domain.Services.<%= _Context %>.<%= _Collection %>

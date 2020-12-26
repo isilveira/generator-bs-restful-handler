@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace <%= _ProjectName %>.Core.Domain.Validations.EntityValidations<%= _Context %>
+namespace <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>
 {
     public class <%= _Entity %>Validator : AbstractValidator<<%= _Entity %>>
     {
