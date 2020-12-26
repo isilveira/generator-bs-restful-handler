@@ -5,7 +5,7 @@ using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Collection %>ByFilter
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Collection %>'ByFilter
 {
     public class Get<%= _Collection %>ByFilterQueryHandler : IRequestHandler<Get<%= _Collection %>ByFilterQuery, Get<%= _Collection %>ByFilterQueryResponse>
     {
