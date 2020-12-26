@@ -17,11 +17,11 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
         {
             var mocked<%= _Context %>DbContext = Mock<%= _Context %>Helper
                 .GetMockedDbContext()
-                .AddMocked<%= _Collection %>>();
+                .AddMocked<%= _Collection %>();
 
             var mocked<%= _Context %>DbContextQuery = Mock<%= _Context %>Helper
                 .GetMockedDbContext()
-                .AddMocked<%= _Collection %>>();
+                .AddMocked<%= _Collection %>();
 
             var mocked<%= _Entity %>Validator = new <%= _Entity %>Validator();
 
