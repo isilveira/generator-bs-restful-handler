@@ -1,9 +1,7 @@
 ﻿using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
-using <%= _ProjectName %>.Core.Domain.Exceptions;
 using <%= _ProjectName %>.Core.Domain.Services.<%= _Context %>.<%= _Collection %>;
 using <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Context %>.<%= _Collection %>;
 using <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>;
-using <%= _ProjectName %>.Core.Domain.Validations.Specifications.<%= _Context %>.<%= _Collection %>;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
@@ -15,11 +13,11 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
     {
         private Put<%= _Entity %>Service GetMockedPut<%= _Entity %>Service()
         {
-            var mocked<%= _Context %>DbContext = Mock<%= _Context %>Helper
+            var mockedDbContext = Mock<%= _Context %>Helper
                 .GetMockedDbContext()
                 .AddMocked<%= _Collection %>();
 
-            var mocked<%= _Context %>DbContextQuery = Mock<%= _Context %>Helper
+            var mockedDbContextQuery = Mock<%= _Context %>Helper
                 .GetMockedDbContext()
                 .AddMocked<%= _Collection %>();
 
@@ -28,7 +26,7 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
             var mockedPut<%= _Entity %>SpecificationsValidator = new Put<%= _Entity %>SpecificationsValidator();
 
             var mockedPut<%= _Entity %>Service = new Put<%= _Entity %>Service(
-                mocked<%= _Context %>DbContext.Object,
+                mockedDbContext.Object,
                 mocked<%= _Entity %>Validator,
                 mockedPut<%= _Entity %>SpecificationsValidator);
 

@@ -1,9 +1,7 @@
 ﻿using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
-using <%= _ProjectName %>.Core.Domain.Exceptions;
 using <%= _ProjectName %>.Core.Domain.Services.<%= _Context %>.<%= _Collection %>;
 using <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Context %>.<%= _Collection %>;
 using <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>;
-using <%= _ProjectName %>.Core.Domain.Validations.Specifications.<%= _Context %>.<%= _Collection %>;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
@@ -27,7 +25,7 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
             var mockedPost<%= _Entity %>SpecificationsValidator = new Post<%= _Entity %>SpecificationsValidator();
 
             var mockedPost<%= _Entity %>Service = new Post<%= _Entity %>Service(
-                mocked<%= _Context %>DbContext.Object,
+                mockedDbContext.Object,
                 mocked<%= _Entity %>Validator,
                 mockedPost<%= _Entity %>SpecificationsValidator);
 
