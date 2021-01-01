@@ -6,11 +6,8 @@ namespace <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Con
 {
     public class Post<%= _Entity %>SpecificationsValidator : DomainValidator<<%= _Entity %>>
     {
-        public Post<%= _Entity %>SpecificationsValidator(
-            <%= _Entity %>DescriptionAlreadyExistsSpecification sampleDescriptionAlreadyExistsSpecification
-        )
+        public Post<%= _Entity %>SpecificationsValidator()
         {
-            base.Add("SanpleMustBeUnique", new DomainRule<<%= _Entity %>>(sampleDescriptionAlreadyExistsSpecification.Not(), "A register with this description already exists!"));
         }
     }
 }

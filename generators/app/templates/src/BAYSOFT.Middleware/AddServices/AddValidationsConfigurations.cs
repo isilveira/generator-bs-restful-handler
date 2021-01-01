@@ -9,8 +9,6 @@ namespace <%= _ProjectName %>.Middleware.AddServices
     {
         public static IServiceCollection AddSpecifications(this IServiceCollection services)
         {
-            services.AddTransient<<%= _Entity %>DescriptionAlreadyExistsSpecification>();
-
             return services;
         }
         public static IServiceCollection AddEntityValidations(this IServiceCollection services)

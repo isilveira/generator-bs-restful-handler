@@ -24,11 +24,7 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
 
             var mocked<%= _Entity %>Validator = new <%= _Entity %>Validator();
 
-            var sampleDescriptionAlreadyExistsSpecification = new <%= _Entity %>DescriptionAlreadyExistsSpecification(
-                mocked<%= _Context %>DbContextQuery.Object);
-
-            var mockedPatch<%= _Entity %>SpecificationsValidator = new Patch<%= _Entity %>SpecificationsValidator(
-                sampleDescriptionAlreadyExistsSpecification);
+            var mockedPatch<%= _Entity %>SpecificationsValidator = new Patch<%= _Entity %>SpecificationsValidator();
 
             var mockedPatch<%= _Entity %>Service = new Patch<%= _Entity %>Service(
                 mocked<%= _Context %>DbContext.Object,
@@ -40,32 +36,6 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
         }
 
         [TestMethod]
-        public async Task TestPatch<%= _Entity %>WithEmptyModelAsync()
-        {
-            var mockedPatch<%= _Entity %>Service = GetMockedPatch<%= _Entity %>Service();
-
-            var mocked<%= _Entity %> = new <%= _Entity %> { };
-
-            await Assert.ThrowsExceptionAsync<BusinessException>(() =>
-                mockedPatch<%= _Entity %>Service.Run(mocked<%= _Entity %>));
-        }
-
-        [TestMethod]
-        public async Task TestPatch<%= _Entity %>WithDuplicatedDescriptionOnSchoolAsync()
-        {
-            var mockedPatch<%= _Entity %>Service = GetMockedPatch<%= _Entity %>Service();
-
-            var mocked<%= _Entity %> = new <%= _Entity %>
-            {
-                Id = 1,
-                Description = "<%= _Entity %> - 002"
-            };
-
-            await Assert.ThrowsExceptionAsync<BusinessException>(() =>
-                mockedPatch<%= _Entity %>Service.Run(mocked<%= _Entity %>));
-        }
-
-        [TestMethod]
         public async Task TestPatch<%= _Entity %>ValidModelAsync()
         {
             var mockedPatch<%= _Entity %>Service = GetMockedPatch<%= _Entity %>Service();
@@ -73,7 +43,6 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
             var mocked<%= _Entity %> = new <%= _Entity %>
             {
                 Id = 1,
-                Description = "<%= _Entity %> - 003"
             };
 
             await mockedPatch<%= _Entity %>Service.Run(mocked<%= _Entity %>);

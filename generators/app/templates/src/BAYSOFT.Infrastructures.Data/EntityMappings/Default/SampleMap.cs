@@ -15,10 +15,6 @@ namespace <%= _ProjectName %>.Infrastructures.Data.EntityMappings.<%= _Context %
                 .UseIdentityColumn();
 
             builder
-                .Property<string>("Description")
-                .HasColumnType("nvarchar(512)");
-
-            builder
                 .HasKey("Id");
 
             builder

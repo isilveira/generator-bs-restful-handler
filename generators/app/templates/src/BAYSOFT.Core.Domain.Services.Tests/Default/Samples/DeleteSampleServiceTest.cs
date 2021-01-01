@@ -37,7 +37,6 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
             var mocked<%= _Entity %> = new <%= _Entity %>
             {
                 Id = 1,
-                Description = "<%= _Entity %> - 001"
             };
 
             await mockedDelete<%= _Entity %>Service.Run(mocked<%= _Entity %>);

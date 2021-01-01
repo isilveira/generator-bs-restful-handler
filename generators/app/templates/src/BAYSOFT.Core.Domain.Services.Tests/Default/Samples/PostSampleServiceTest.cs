@@ -24,11 +24,7 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
 
             var mocked<%= _Entity %>Validator = new <%= _Entity %>Validator();
 
-            var mocked<%= _Entity %>NameAlreadyExistsSpecification = new <%= _Entity %>DescriptionAlreadyExistsSpecification(
-                mocked<%= _Context %>DbContextQuery.Object);
-
-            var mockedPost<%= _Entity %>SpecificationsValidator = new Post<%= _Entity %>SpecificationsValidator(
-                mocked<%= _Entity %>NameAlreadyExistsSpecification);
+            var mockedPost<%= _Entity %>SpecificationsValidator = new Post<%= _Entity %>SpecificationsValidator();
 
             var mockedPost<%= _Entity %>Service = new Post<%= _Entity %>Service(
                 mocked<%= _Context %>DbContext.Object,
@@ -50,28 +46,11 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
         }
 
         [TestMethod]
-        public async Task TestPost<%= _Entity %>WithDuplicatedDescriptionOnSchoolAsync()
-        {
-            var mockedPost<%= _Entity %>Service = GetMockedPost<%= _Entity %>Service();
-
-            var mocked<%= _Entity %> = new <%= _Entity %>
-            {
-                Description = "<%= _Entity %> - 002",
-            };
-
-            await Assert.ThrowsExceptionAsync<BusinessException>(() =>
-                mockedPost<%= _Entity %>Service.Run(mocked<%= _Entity %>));
-        }
-
-        [TestMethod]
         public async Task TestPost<%= _Entity %>ValidModelAsync()
         {
             var mockedPost<%= _Entity %>Service = GetMockedPost<%= _Entity %>Service();
 
-            var mocked<%= _Entity %> = new <%= _Entity %>
-            {
-                Description = "<%= _Entity %> - 003",
-            };
+            var mocked<%= _Entity %> = new <%= _Entity %> { };
 
             await mockedPost<%= _Entity %>Service.Run(mocked<%= _Entity %>);
         }

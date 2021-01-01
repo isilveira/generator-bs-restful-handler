@@ -12,8 +12,8 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
         private static IQueryable<<%= _Entity %>> Get<%= _Collection %>Collection()
         {
             return new List<<%= _Entity %>> {
-                new <%= _Entity %> { Id = 1, Description = "<%= _Entity %> - 001" },
-                new <%= _Entity %> { Id = 2, Description = "<%= _Entity %> - 002" },
+                new <%= _Entity %> { Id = 1, },
+                new <%= _Entity %> { Id = 2, },
             }.AsQueryable();
         }
 

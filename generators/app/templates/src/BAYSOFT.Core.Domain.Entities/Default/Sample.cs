@@ -4,7 +4,6 @@ namespace <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>
 {
     public class <%= _Entity %> : DomainEntity<int>
     {
-        public string Description { get; set; }
         public <%= _Entity %>()
         {
         }
