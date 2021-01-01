@@ -1,11 +1,11 @@
 ﻿using BAYSOFT.Abstractions.Core.Domain.Entities;
 
-namespace BAYSOFT.Core.Domain.Entities.Default
+namespace <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>
 {
-    public class Sample : DomainEntity<int>
+    public class <%= _Entity %> : DomainEntity<int>
     {
         public string Description { get; set; }
-        public Sample()
+        public <%= _Entity %>()
         {
         }
     }

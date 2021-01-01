@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("BAYSOFT.Core.Domain.Services.Tests")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("<%= _ProjectName %>.Core.Domain.Services.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("BAYSOFT.Core.Domain.Services.Tests")]
-[assembly: System.Reflection.AssemblyTitleAttribute("BAYSOFT.Core.Domain.Services.Tests")]
+[assembly: System.Reflection.AssemblyProductAttribute("<%= _ProjectName %>.Core.Domain.Services.Tests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("<%= _ProjectName %>.Core.Domain.Services.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

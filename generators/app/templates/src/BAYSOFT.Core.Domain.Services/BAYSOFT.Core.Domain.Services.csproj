@@ -18,9 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Entities\BAYSOFT.Core.Domain.Entities.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Validations\BAYSOFT.Core.Domain.Validations.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Core.Domain\BAYSOFT.Core.Domain.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain.Entities\<%= _ProjectName %>.Core.Domain.Entities.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain.Validations\<%= _ProjectName %>.Core.Domain.Validations.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain\<%= _ProjectName %>.Core.Domain.csproj" />
   </ItemGroup>
 
 </Project>

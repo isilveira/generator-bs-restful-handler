@@ -18,14 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Entities\BAYSOFT.Core.Domain.Entities.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain.Entities\<%= _ProjectName %>.Core.Domain.Entities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\EntitiesDefault.Designer.cs">
+    <Compile Update="Resources\Entities<%= _Context %>.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>EntitiesDefault.resx</DependentUpon>
+      <DependentUpon>Entities<%= _Context %>.resx</DependentUpon>
     </Compile>
     <Compile Update="Resources\Messages.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -35,9 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\EntitiesDefault.resx">
+    <EmbeddedResource Update="Resources\Entities<%= _Context %>.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EntitiesDefault.Designer.cs</LastGenOutput>
+      <LastGenOutput>Entities<%= _Context %>.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Messages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

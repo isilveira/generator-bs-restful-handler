@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("BAYSOFT.Infrastructures.Data")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("<%= _ProjectName %>.Infrastructures.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("BAYSOFT.Infrastructures.Data")]
-[assembly: System.Reflection.AssemblyTitleAttribute("BAYSOFT.Infrastructures.Data")]
+[assembly: System.Reflection.AssemblyProductAttribute("<%= _ProjectName %>.Infrastructures.Data")]
+[assembly: System.Reflection.AssemblyTitleAttribute("<%= _ProjectName %>.Infrastructures.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

@@ -1,49 +1,49 @@
-﻿using BAYSOFT.Core.Domain.Entities.Default;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+﻿using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BAYSOFT.Core.Domain.Services.Tests.Default.Samples
+namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Collection %>
 {
-    internal static class AddMockedSamplesExtensions
+    internal static class AddMocked<%= _Collection %>Extensions
     {
-        private static IQueryable<Sample> GetSamplesCollection()
+        private static IQueryable<<%= _Entity %>> Get<%= _Collection %>Collection()
         {
-            return new List<Sample> {
-                new Sample { Id = 1, Description = "Sample - 001" },
-                new Sample { Id = 2, Description = "Sample - 002" },
+            return new List<<%= _Entity %>> {
+                new <%= _Entity %> { Id = 1, Description = "<%= _Entity %> - 001" },
+                new <%= _Entity %> { Id = 2, Description = "<%= _Entity %> - 002" },
             }.AsQueryable();
         }
 
-        private static Mock<DbSet<Sample>> GetMockedDbSetSamples()
+        private static Mock<DbSet<<%= _Entity %>>> GetMockedDbSet<%= _Collection %>()
         {
-            var collection = GetSamplesCollection();
+            var collection = Get<%= _Collection %>Collection();
 
-            var mockedDbSetSamples = collection.MockDbSet();
+            var mockedDbSet<%= _Collection %> = collection.MockDbSet();
 
-            return mockedDbSetSamples;
+            return mockedDbSet<%= _Collection %>;
         }
 
-        internal static Mock<IDefaultDbContext> AddMockedSamples(this Mock<IDefaultDbContext> mockedDbContext)
+        internal static Mock<I<%= _Context %>DbContext> AddMocked<%= _Collection %>(this Mock<I<%= _Context %>DbContext> mockedDbContext)
         {
-            var mockedDbSetSamples = GetMockedDbSetSamples();
+            var mockedDbSet<%= _Collection %> = GetMockedDbSet<%= _Collection %>();
 
             mockedDbContext
-                .Setup(setup => setup.Samples)
-                .Returns(mockedDbSetSamples.Object);
+                .Setup(setup => setup.<%= _Collection %>)
+                .Returns(mockedDbSet<%= _Collection %>.Object);
 
             return mockedDbContext;
         }
 
-        internal static Mock<IDefaultDbContextQuery> AddMockedSamples(this Mock<IDefaultDbContextQuery> mockedDbContextQuery)
+        internal static Mock<I<%= _Context %>DbContextQuery> AddMocked<%= _Collection %>(this Mock<I<%= _Context %>DbContextQuery> mockedDbContextQuery)
         {
-            var mockedDbSetSamples = GetMockedDbSetSamples();
+            var mockedDbSet<%= _Collection %> = GetMockedDbSet<%= _Collection %>();
 
             mockedDbContextQuery
-                .Setup(setup => setup.Samples)
-                .Returns(mockedDbSetSamples.Object);
+                .Setup(setup => setup.<%= _Collection %>)
+                .Returns(mockedDbSet<%= _Collection %>.Object);
 
             return mockedDbContextQuery;
         }

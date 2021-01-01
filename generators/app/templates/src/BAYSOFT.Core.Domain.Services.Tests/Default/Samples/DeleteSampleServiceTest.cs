@@ -1,46 +1,46 @@
-﻿using BAYSOFT.Core.Domain.Entities.Default;
-using BAYSOFT.Core.Domain.Services.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.DomainValidations.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.EntityValidations.Default;
+﻿using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Services.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Domain.Services.Tests.Default.Samples
+namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Collection %>
 {
     [TestClass]
-    public class DeleteSampleServiceTest
+    public class Delete<%= _Entity %>ServiceTest
     {
-        private DeleteSampleService GetMockedDeleteSampleService()
+        private Delete<%= _Entity %>Service GetMockedDelete<%= _Entity %>Service()
         {
-            var mockedDefaultDbContext = MockDefaultHelper
+            var mocked<%= _Context %>DbContext = Mock<%= _Context %>Helper
                 .GetMockedDbContext()
-                .AddMockedSamples();
+                .AddMocked<%= _Collection %>();
 
-            var mockedSampleValidator = new SampleValidator();
+            var mocked<%= _Entity %>Validator = new <%= _Entity %>Validator();
 
-            var mockedDeleteSampleSpecificationsValidator = new DeleteSampleSpecificationsValidator();
+            var mockedDelete<%= _Entity %>SpecificationsValidator = new Delete<%= _Entity %>SpecificationsValidator();
 
-            var mockedDeleteSampleService = new DeleteSampleService(
-                mockedDefaultDbContext.Object,
-                mockedSampleValidator,
-                mockedDeleteSampleSpecificationsValidator
+            var mockedDelete<%= _Entity %>Service = new Delete<%= _Entity %>Service(
+                mocked<%= _Context %>DbContext.Object,
+                mocked<%= _Entity %>Validator,
+                mockedDelete<%= _Entity %>SpecificationsValidator
                 );
 
-            return mockedDeleteSampleService;
+            return mockedDelete<%= _Entity %>Service;
         }
 
         [TestMethod]
-        public async Task TestDeleteSampleValidModelAsync()
+        public async Task TestDelete<%= _Entity %>ValidModelAsync()
         {
-            var mockedDeleteSampleService = GetMockedDeleteSampleService();
+            var mockedDelete<%= _Entity %>Service = GetMockedDelete<%= _Entity %>Service();
 
-            var mockedSample = new Sample
+            var mocked<%= _Entity %> = new <%= _Entity %>
             {
                 Id = 1,
-                Description = "Sample - 001"
+                Description = "<%= _Entity %> - 001"
             };
 
-            await mockedDeleteSampleService.Run(mockedSample);
+            await mockedDelete<%= _Entity %>Service.Run(mocked<%= _Entity %>);
         }
     }
 }

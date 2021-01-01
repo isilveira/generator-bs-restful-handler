@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts
+namespace <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts
 {
-    public interface IDefaultDbContext : IDefaultDbContextQuery
+    public interface I<%= _Context %>DbContext : I<%= _Context %>DbContextQuery
     {
         public int SaveChanges(bool acceptAllChangesOnSuccess);
         public int SaveChanges();

@@ -1,79 +1,79 @@
 ﻿using BAYSOFT.Abstractions.Core.Domain.Exceptions;
-using BAYSOFT.Core.Domain.Entities.Default;
-using BAYSOFT.Core.Domain.Services.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.DomainValidations.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.EntityValidations.Default;
-using BAYSOFT.Core.Domain.Validations.Specifications.Default.Samples;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Services.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Validations.Specifications.<%= _Context %>.<%= _Collection %>;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Domain.Services.Tests.Default.Samples
+namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Collection %>
 {
     [TestClass]
-    public class PostSampleServiceTest
+    public class Post<%= _Entity %>ServiceTest
     {
-        private PostSampleService GetMockedPostSampleService()
+        private Post<%= _Entity %>Service GetMockedPost<%= _Entity %>Service()
         {
-            var mockedDefaultDbContext = MockDefaultHelper
+            var mocked<%= _Context %>DbContext = Mock<%= _Context %>Helper
                 .GetMockedDbContext()
-                .AddMockedSamples();
+                .AddMocked<%= _Collection %>();
 
-            var mockedDefaultDbContextQuery = MockDefaultHelper
+            var mocked<%= _Context %>DbContextQuery = Mock<%= _Context %>Helper
                 .GetMockedDbContextQuery()
-                .AddMockedSamples();
+                .AddMocked<%= _Collection %>();
 
-            var mockedSampleValidator = new SampleValidator();
+            var mocked<%= _Entity %>Validator = new <%= _Entity %>Validator();
 
-            var mockedSampleNameAlreadyExistsSpecification = new SampleDescriptionAlreadyExistsSpecification(
-                mockedDefaultDbContextQuery.Object);
+            var mocked<%= _Entity %>NameAlreadyExistsSpecification = new <%= _Entity %>DescriptionAlreadyExistsSpecification(
+                mocked<%= _Context %>DbContextQuery.Object);
 
-            var mockedPostSampleSpecificationsValidator = new PostSampleSpecificationsValidator(
-                mockedSampleNameAlreadyExistsSpecification);
+            var mockedPost<%= _Entity %>SpecificationsValidator = new Post<%= _Entity %>SpecificationsValidator(
+                mocked<%= _Entity %>NameAlreadyExistsSpecification);
 
-            var mockedPostSampleService = new PostSampleService(
-                mockedDefaultDbContext.Object,
-                mockedSampleValidator,
-                mockedPostSampleSpecificationsValidator);
+            var mockedPost<%= _Entity %>Service = new Post<%= _Entity %>Service(
+                mocked<%= _Context %>DbContext.Object,
+                mocked<%= _Entity %>Validator,
+                mockedPost<%= _Entity %>SpecificationsValidator);
 
-            return mockedPostSampleService;
+            return mockedPost<%= _Entity %>Service;
         }
 
         [TestMethod]
-        public async Task TestPostSampleWithEmptyModelAsync()
+        public async Task TestPost<%= _Entity %>WithEmptyModelAsync()
         {
-            var mockedPostSampleService = GetMockedPostSampleService();
+            var mockedPost<%= _Entity %>Service = GetMockedPost<%= _Entity %>Service();
 
-            var mockedSample = new Sample { };
+            var mocked<%= _Entity %> = new <%= _Entity %> { };
 
             await Assert.ThrowsExceptionAsync<BusinessException>(() =>
-                mockedPostSampleService.Run(mockedSample));
+                mockedPost<%= _Entity %>Service.Run(mocked<%= _Entity %>));
         }
 
         [TestMethod]
-        public async Task TestPostSampleWithDuplicatedDescriptionOnSchoolAsync()
+        public async Task TestPost<%= _Entity %>WithDuplicatedDescriptionOnSchoolAsync()
         {
-            var mockedPostSampleService = GetMockedPostSampleService();
+            var mockedPost<%= _Entity %>Service = GetMockedPost<%= _Entity %>Service();
 
-            var mockedSample = new Sample
+            var mocked<%= _Entity %> = new <%= _Entity %>
             {
-                Description = "Sample - 002",
+                Description = "<%= _Entity %> - 002",
             };
 
             await Assert.ThrowsExceptionAsync<BusinessException>(() =>
-                mockedPostSampleService.Run(mockedSample));
+                mockedPost<%= _Entity %>Service.Run(mocked<%= _Entity %>));
         }
 
         [TestMethod]
-        public async Task TestPostSampleValidModelAsync()
+        public async Task TestPost<%= _Entity %>ValidModelAsync()
         {
-            var mockedPostSampleService = GetMockedPostSampleService();
+            var mockedPost<%= _Entity %>Service = GetMockedPost<%= _Entity %>Service();
 
-            var mockedSample = new Sample
+            var mocked<%= _Entity %> = new <%= _Entity %>
             {
-                Description = "Sample - 003",
+                Description = "<%= _Entity %> - 003",
             };
 
-            await mockedPostSampleService.Run(mockedSample);
+            await mockedPost<%= _Entity %>Service.Run(mocked<%= _Entity %>);
         }
     }
 }

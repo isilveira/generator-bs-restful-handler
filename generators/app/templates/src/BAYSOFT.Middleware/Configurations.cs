@@ -1,4 +1,4 @@
-﻿using BAYSOFT.Middleware.AddServices;
+﻿using <%= _ProjectName %>.Middleware.AddServices;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -7,7 +7,7 @@ using ModelWrapper.Middleware;
 using System;
 using System.Reflection;
 
-namespace BAYSOFT.Middleware
+namespace <%= _ProjectName %>.Middleware
 {
     public static class Configurations
     {
@@ -21,12 +21,12 @@ namespace BAYSOFT.Middleware
             services.AddDomainValidations();
             services.AddDomainServices();
 
-            var assembly = AppDomain.CurrentDomain.Load("BAYSOFT.Core.Application");
+            var assembly = AppDomain.CurrentDomain.Load("<%= _ProjectName %>.Core.Application");
 
             services.AddMediatR(assembly);
 
             services.AddModelWrapper()
-                .AddDefaultReturnedCollectionSize(10)
+                .Add<%= _Context %>ReturnedCollectionSize(10)
                 .AddMinimumReturnedCollectionSize(1)
                 .AddMaximumReturnedCollectionSize(100)
                 .AddQueryTermsMinimumSize(3)
@@ -41,7 +41,7 @@ namespace BAYSOFT.Middleware
             var supportedCultures = new string[] { "en-US", "pt-BR" };
 
             var localizationOptions = new RequestLocalizationOptions()
-                .SetDefaultCulture(supportedCultures[0])
+                .Set<%= _Context %>Culture(supportedCultures[0])
                 .AddSupportedCultures(supportedCultures)
                 .AddSupportedUICultures(supportedCultures);
             

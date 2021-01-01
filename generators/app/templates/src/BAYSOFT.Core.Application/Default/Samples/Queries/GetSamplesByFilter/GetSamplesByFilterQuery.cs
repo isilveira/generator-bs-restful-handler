@@ -1,11 +1,11 @@
 using BAYSOFT.Abstractions.Core.Application;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Queries.GetSamplesByFilter
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Collection %>ByFilter
 {
-    public class GetSamplesByFilterQuery : ApplicationRequest<Sample, GetSamplesByFilterQueryResponse>
+    public class Get<%= _Collection %>ByFilterQuery : ApplicationRequest<<%= _Entity %>, Get<%= _Collection %>ByFilterQueryResponse>
     {
-        public GetSamplesByFilterQuery()
+        public Get<%= _Collection %>ByFilterQuery()
         {
             ConfigKeys(x => x.Id);
             

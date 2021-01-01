@@ -1,9 +1,9 @@
 ﻿using BAYSOFT.Abstractions.Core.Domain.Interfaces.Services;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Domain.Interfaces.Services.Default.Samples
+namespace <%= _ProjectName %>.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>
 {
-    public interface IPatchSampleService : IDomainService<Sample>
+    public interface IPatch<%= _Entity %>Service : IDomainService<<%= _Entity %>>
     {
     }
 }

@@ -1,11 +1,11 @@
 using BAYSOFT.Abstractions.Core.Application;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Queries.GetSampleByID
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>ByID
 {
-    public class GetSampleByIDQuery : ApplicationRequest<Sample, GetSampleByIDQueryResponse>
+    public class Get<%= _Entity %>ByIDQuery : ApplicationRequest<<%= _Entity %>, Get<%= _Entity %>ByIDQueryResponse>
     {
-        public GetSampleByIDQuery()
+        public Get<%= _Entity %>ByIDQuery()
         {
             ConfigKeys(x => x.Id);
             

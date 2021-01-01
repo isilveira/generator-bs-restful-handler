@@ -2,7 +2,7 @@
 using Moq;
 using System.Linq;
 
-namespace BAYSOFT.Core.Domain.Services.Tests
+namespace <%= _ProjectName %>.Core.Domain.Services.Tests
 {
     internal static class MockDbSetExtension
     {

@@ -1,11 +1,11 @@
 ﻿using BAYSOFT.Abstractions.Core.Domain.Validations;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Domain.Validations.DomainValidations.Default.Samples
+namespace <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Context %>.<%= _Collection %>
 {
-    public class DeleteSampleSpecificationsValidator : DomainValidator<Sample>
+    public class Delete<%= _Entity %>SpecificationsValidator : DomainValidator<<%= _Entity %>>
     {
-        public DeleteSampleSpecificationsValidator()
+        public Delete<%= _Entity %>SpecificationsValidator()
         {
         }
     }

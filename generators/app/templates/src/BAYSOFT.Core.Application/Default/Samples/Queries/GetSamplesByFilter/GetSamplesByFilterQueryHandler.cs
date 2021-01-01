@@ -1,37 +1,37 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModelWrapper.Extensions.FullSearch;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using System.Threading;
 using System.Threading.Tasks;
-using BAYSOFT.Core.Domain.Resources;
+using <%= _ProjectName %>.Core.Domain.Resources;
 using Microsoft.Extensions.Localization;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 using BAYSOFT.Abstractions.Core.Application;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Queries.GetSamplesByFilter
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Collection %>ByFilter
 {
-    public class GetSamplesByFilterQueryHandler : ApplicationRequestHandler<Sample, GetSamplesByFilterQuery, GetSamplesByFilterQueryResponse>
+    public class Get<%= _Collection %>ByFilterQueryHandler : ApplicationRequestHandler<<%= _Entity %>, Get<%= _Collection %>ByFilterQuery, Get<%= _Collection %>ByFilterQueryResponse>
     {
         private IStringLocalizer StringLocalizer { get; set; }
-        private IDefaultDbContext Context { get; set; }
-        public GetSamplesByFilterQueryHandler(
+        private I<%= _Context %>DbContext Context { get; set; }
+        public Get<%= _Collection %>ByFilterQueryHandler(
             IStringLocalizer<Messages> stringLocalizer,
-            IDefaultDbContext context)
+            I<%= _Context %>DbContext context)
         {
             StringLocalizer = stringLocalizer;
             Context = context;
         }
-        public override async Task<GetSamplesByFilterQueryResponse> Handle(GetSamplesByFilterQuery request, CancellationToken cancellationToken)
+        public override async Task<Get<%= _Collection %>ByFilterQueryResponse> Handle(Get<%= _Collection %>ByFilterQuery request, CancellationToken cancellationToken)
         {
             long resultCount = 0;
             
-            var data =  await Context.Samples
+            var data =  await Context.<%= _Collection %>
                 .FullSearch(request, out resultCount)
                 .AsNoTracking()
                 .ToListAsync(cancellationToken);
             
-            return new GetSamplesByFilterQueryResponse(request, data, StringLocalizer["Successful operation!"], resultCount);
+            return new Get<%= _Collection %>ByFilterQueryResponse(request, data, StringLocalizer["Successful operation!"], resultCount);
         }
     }
 }

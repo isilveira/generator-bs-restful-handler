@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Infrastructures.Services\\BAYSOFT.Infrastructures.Services.csproj": {}
+    "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Infrastructures.Services\\<%= _ProjectName %>.Infrastructures.Services.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj": {
+    "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj",
-        "projectName": "BAYSOFT.Core.Domain.Entities",
-        "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj",
+        "projectUniqueName": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj",
+        "projectName": "<%= _ProjectName %>.Core.Domain.Entities",
+        "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj",
         "packagesPath": "C:\\Users\\italo\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\obj\\",
+        "outputPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -93,14 +93,14 @@
         }
       }
     },
-    "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain\\BAYSOFT.Core.Domain.csproj": {
+    "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain\\<%= _ProjectName %>.Core.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain\\BAYSOFT.Core.Domain.csproj",
-        "projectName": "BAYSOFT.Core.Domain",
-        "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain\\BAYSOFT.Core.Domain.csproj",
+        "projectUniqueName": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain\\<%= _ProjectName %>.Core.Domain.csproj",
+        "projectName": "<%= _ProjectName %>.Core.Domain",
+        "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain\\<%= _ProjectName %>.Core.Domain.csproj",
         "packagesPath": "C:\\Users\\italo\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain\\obj\\",
+        "outputPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -120,8 +120,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj": {
-                "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj"
+              "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj": {
+                "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj"
               }
             }
           }
@@ -186,14 +186,14 @@
         }
       }
     },
-    "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Infrastructures.Services\\BAYSOFT.Infrastructures.Services.csproj": {
+    "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Infrastructures.Services\\<%= _ProjectName %>.Infrastructures.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Infrastructures.Services\\BAYSOFT.Infrastructures.Services.csproj",
-        "projectName": "BAYSOFT.Infrastructures.Services",
-        "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Infrastructures.Services\\BAYSOFT.Infrastructures.Services.csproj",
+        "projectUniqueName": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Infrastructures.Services\\<%= _ProjectName %>.Infrastructures.Services.csproj",
+        "projectName": "<%= _ProjectName %>.Infrastructures.Services",
+        "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Infrastructures.Services\\<%= _ProjectName %>.Infrastructures.Services.csproj",
         "packagesPath": "C:\\Users\\italo\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Infrastructures.Services\\obj\\",
+        "outputPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Infrastructures.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -213,11 +213,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj": {
-                "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj"
+              "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj": {
+                "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj"
               },
-              "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain\\BAYSOFT.Core.Domain.csproj": {
-                "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain\\BAYSOFT.Core.Domain.csproj"
+              "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain\\<%= _ProjectName %>.Core.Domain.csproj": {
+                "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain\\<%= _ProjectName %>.Core.Domain.csproj"
               }
             }
           }

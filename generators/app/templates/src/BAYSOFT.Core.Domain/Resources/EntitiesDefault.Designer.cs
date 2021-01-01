@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BAYSOFT.Core.Domain.Resources {
+namespace <%= _ProjectName %>.Core.Domain.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace BAYSOFT.Core.Domain.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class EntitiesDefault {
+    public class Entities<%= _Context %> {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal EntitiesDefault() {
+        internal Entities<%= _Context %>() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace BAYSOFT.Core.Domain.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BAYSOFT.Core.Domain.Resources.EntitiesDefault", typeof(EntitiesDefault).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("<%= _ProjectName %>.Core.Domain.Resources.Entities<%= _Context %>", typeof(Entities<%= _Context %>).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,11 @@ namespace BAYSOFT.Core.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sample.
+        ///   Looks up a localized string similar to <%= _Entity %>.
         /// </summary>
-        public static string Sample {
+        public static string <%= _Entity %> {
             get {
-                return ResourceManager.GetString("Sample", resourceCulture);
+                return ResourceManager.GetString("<%= _Entity %>", resourceCulture);
             }
         }
     }

@@ -1,23 +1,23 @@
 ﻿using BAYSOFT.Abstractions.Core.Domain.Validations;
-using BAYSOFT.Core.Domain.Entities.Default;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace BAYSOFT.Core.Domain.Validations.Specifications.Default.Samples
+namespace <%= _ProjectName %>.Core.Domain.Validations.Specifications.<%= _Context %>.<%= _Collection %>
 {
-    public class SampleDescriptionAlreadyExistsSpecification : DomainSpecification<Sample>
+    public class <%= _Entity %>DescriptionAlreadyExistsSpecification : DomainSpecification<<%= _Entity %>>
     {
-        private IDefaultDbContextQuery Context { get; set; }
-        public SampleDescriptionAlreadyExistsSpecification(IDefaultDbContextQuery context)
+        private I<%= _Context %>DbContextQuery Context { get; set; }
+        public <%= _Entity %>DescriptionAlreadyExistsSpecification(I<%= _Context %>DbContextQuery context)
         {
             Context = context;
         }
 
-        public override Expression<Func<Sample, bool>> ToExpression()
+        public override Expression<Func<<%= _Entity %>, bool>> ToExpression()
         {
-            return sample => Context.Samples.Any(x => x.Description == sample.Description && x.Id != sample.Id);
+            return sample => Context.<%= _Collection %>.Any(x => x.Description == sample.Description && x.Id != sample.Id);
         }
     }
 }

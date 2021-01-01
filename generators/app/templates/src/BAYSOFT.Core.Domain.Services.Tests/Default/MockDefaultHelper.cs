@@ -1,19 +1,19 @@
-﻿using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+﻿using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using Moq;
 
-namespace BAYSOFT.Core.Domain.Services.Tests.Default
+namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>
 {
-    public static class MockDefaultHelper
+    public static class Mock<%= _Context %>Helper
     {
-        internal static Mock<IDefaultDbContext> GetMockedDbContext()
+        internal static Mock<I<%= _Context %>DbContext> GetMockedDbContext()
         {
-            var mockedDbContext = new Mock<IDefaultDbContext>();
+            var mockedDbContext = new Mock<I<%= _Context %>DbContext>();
 
             return mockedDbContext;
         }
-        internal static Mock<IDefaultDbContextQuery> GetMockedDbContextQuery()
+        internal static Mock<I<%= _Context %>DbContextQuery> GetMockedDbContextQuery()
         {
-            var mockedDbContextQuery = new Mock<IDefaultDbContextQuery>();
+            var mockedDbContextQuery = new Mock<I<%= _Context %>DbContextQuery>();
 
             return mockedDbContextQuery;
         }

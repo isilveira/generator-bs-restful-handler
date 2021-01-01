@@ -1,11 +1,11 @@
 using BAYSOFT.Abstractions.Core.Application;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Commands.PutSample
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Put<%= _Entity %>
 {
-    public class PutSampleCommand : ApplicationRequest<Sample, PutSampleCommandResponse>
+    public class Put<%= _Entity %>Command : ApplicationRequest<<%= _Entity %>, Put<%= _Entity %>CommandResponse>
     {
-        public PutSampleCommand()
+        public Put<%= _Entity %>Command()
         {
             ConfigKeys(x => x.Id);
             

@@ -1,11 +1,11 @@
 using BAYSOFT.Abstractions.Core.Application;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Commands.PatchSample
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Patch<%= _Entity %>
 {
-    public class PatchSampleCommand : ApplicationRequest<Sample, PatchSampleCommandResponse>
+    public class Patch<%= _Entity %>Command : ApplicationRequest<<%= _Entity %>, Patch<%= _Entity %>CommandResponse>
     {
-        public PatchSampleCommand()
+        public Patch<%= _Entity %>Command()
         {
             ConfigKeys(x => x.Id);
 

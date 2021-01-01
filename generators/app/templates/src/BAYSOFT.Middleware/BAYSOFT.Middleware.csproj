@@ -22,13 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BAYSOFT.Core.Application\BAYSOFT.Core.Application.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Entities\BAYSOFT.Core.Domain.Entities.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Services\BAYSOFT.Core.Domain.Services.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Validations\BAYSOFT.Core.Domain.Validations.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Core.Domain\BAYSOFT.Core.Domain.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Infrastructures.Data\BAYSOFT.Infrastructures.Data.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Infrastructures.Services\BAYSOFT.Infrastructures.Services.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Application\<%= _ProjectName %>.Core.Application.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain.Entities\<%= _ProjectName %>.Core.Domain.Entities.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain.Services\<%= _ProjectName %>.Core.Domain.Services.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain.Validations\<%= _ProjectName %>.Core.Domain.Validations.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain\<%= _ProjectName %>.Core.Domain.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Infrastructures.Data\<%= _ProjectName %>.Infrastructures.Data.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Infrastructures.Services\<%= _ProjectName %>.Infrastructures.Services.csproj" />
   </ItemGroup>
 
 </Project>

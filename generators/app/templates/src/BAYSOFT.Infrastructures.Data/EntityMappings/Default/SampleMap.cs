@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Infrastructures.Data.EntityMappings.Default
+namespace <%= _ProjectName %>.Infrastructures.Data.EntityMappings.<%= _Context %>
 {
-    public class SampleMap : IEntityTypeConfiguration<Sample>
+    public class <%= _Entity %>Map : IEntityTypeConfiguration<<%= _Entity %>>
     {
-        public void Configure(EntityTypeBuilder<Sample> builder)
+        public void Configure(EntityTypeBuilder<<%= _Entity %>> builder)
         {
             builder
                 .Property<int>("Id")
@@ -22,7 +22,7 @@ namespace BAYSOFT.Infrastructures.Data.EntityMappings.Default
                 .HasKey("Id");
 
             builder
-                .ToTable("Samples");
+                .ToTable("<%= _Collection %>");
         }
     }
 }

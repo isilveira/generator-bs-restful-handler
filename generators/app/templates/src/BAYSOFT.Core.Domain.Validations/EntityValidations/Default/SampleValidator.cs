@@ -1,12 +1,12 @@
 ﻿using BAYSOFT.Abstractions.Core.Domain.Validations;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 using FluentValidation;
 
-namespace BAYSOFT.Core.Domain.Validations.EntityValidations.Default
+namespace <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>
 {
-    public class SampleValidator : EntityValidator<Sample>
+    public class <%= _Entity %>Validator : EntityValidator<<%= _Entity %>>
     {
-        public SampleValidator()
+        public <%= _Entity %>Validator()
         {
             RuleFor(x => x.Description).NotNull().WithMessage("{0} cannot be null!");
             RuleFor(x => x.Description).NotEmpty().WithMessage("{0} cannot be empty!");

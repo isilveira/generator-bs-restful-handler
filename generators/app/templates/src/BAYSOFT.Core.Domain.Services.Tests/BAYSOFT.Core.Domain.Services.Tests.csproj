@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Entities\BAYSOFT.Core.Domain.Entities.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Services\BAYSOFT.Core.Domain.Services.csproj" />
-    <ProjectReference Include="..\BAYSOFT.Core.Domain\BAYSOFT.Core.Domain.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain.Entities\<%= _ProjectName %>.Core.Domain.Entities.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain.Services\<%= _ProjectName %>.Core.Domain.Services.csproj" />
+    <ProjectReference Include="..\<%= _ProjectName %>.Core.Domain\<%= _ProjectName %>.Core.Domain.csproj" />
   </ItemGroup>
 
 </Project>

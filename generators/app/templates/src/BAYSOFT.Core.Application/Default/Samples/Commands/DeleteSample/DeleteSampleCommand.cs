@@ -1,11 +1,11 @@
 using BAYSOFT.Abstractions.Core.Application;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Commands.DeleteSample
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Delete<%= _Entity %>
 {
-    public class DeleteSampleCommand : ApplicationRequest<Sample, DeleteSampleCommandResponse>
+    public class Delete<%= _Entity %>Command : ApplicationRequest<<%= _Entity %>, Delete<%= _Entity %>CommandResponse>
     {
-        public DeleteSampleCommand()
+        public Delete<%= _Entity %>Command()
         {
             ConfigKeys(x => x.Id);
 

@@ -1,12 +1,12 @@
 using ModelWrapper;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 using BAYSOFT.Abstractions.Core.Application;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Commands.PostSample
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Post<%= _Entity %>
 {
-    public class PostSampleCommandResponse : ApplicationResponse<Sample>
+    public class Post<%= _Entity %>CommandResponse : ApplicationResponse<<%= _Entity %>>
     {
-        public PostSampleCommandResponse(WrapRequest<Sample> request, object data, string message = "Successful operation!", long? resultCount = null)
+        public Post<%= _Entity %>CommandResponse(WrapRequest<<%= _Entity %>> request, object data, string message = "Successful operation!", long? resultCount = null)
             : base(request, data, message, resultCount)
         {
         }

@@ -1,12 +1,12 @@
 using ModelWrapper;
-using BAYSOFT.Core.Domain.Entities.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
 using BAYSOFT.Abstractions.Core.Application;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Queries.GetSampleByID
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Queries.Get<%= _Entity %>ByID
 {
-    public class GetSampleByIDQueryResponse : ApplicationResponse<Sample>
+    public class Get<%= _Entity %>ByIDQueryResponse : ApplicationResponse<<%= _Entity %>>
     {
-        public GetSampleByIDQueryResponse(WrapRequest<Sample> request, object data, string message = "Successful operation!", long? resultCount = null)
+        public Get<%= _Entity %>ByIDQueryResponse(WrapRequest<<%= _Entity %>> request, object data, string message = "Successful operation!", long? resultCount = null)
             : base(request, data, message, resultCount)
         {
         }

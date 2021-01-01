@@ -1,26 +1,26 @@
 ﻿using BAYSOFT.Abstractions.Core.Domain.Services;
-using BAYSOFT.Core.Domain.Entities.Default;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
-using BAYSOFT.Core.Domain.Interfaces.Services.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.DomainValidations.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.EntityValidations.Default;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Validations.DomainValidations.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Validations.EntityValidations.<%= _Context %>;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Domain.Services.Default.Samples
+namespace <%= _ProjectName %>.Core.Domain.Services.<%= _Context %>.<%= _Collection %>
 {
-    public class PutSampleService : DomainService<Sample>, IPutSampleService
+    public class Put<%= _Entity %>Service : DomainService<<%= _Entity %>>, IPut<%= _Entity %>Service
     {
-        private IDefaultDbContext Context { get; set; }
-        public PutSampleService(
-            IDefaultDbContext context,
-            SampleValidator entityValidator,
-            PutSampleSpecificationsValidator domainValidator
+        private I<%= _Context %>DbContext Context { get; set; }
+        public Put<%= _Entity %>Service(
+            I<%= _Context %>DbContext context,
+            <%= _Entity %>Validator entityValidator,
+            Put<%= _Entity %>SpecificationsValidator domainValidator
         ) : base(entityValidator, domainValidator)
         {
             Context = context;
         }
 
-        public override Task Run(Sample entity)
+        public override Task Run(<%= _Entity %> entity)
         {
             ValidateEntity(entity);
 

@@ -1,49 +1,49 @@
 using BAYSOFT.Abstractions.Core.Application;
-using BAYSOFT.Core.Domain.Entities.Default;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
-using BAYSOFT.Core.Domain.Interfaces.Services.Default.Samples;
-using BAYSOFT.Core.Domain.Resources;
+using <%= _ProjectName %>.Core.Domain.Entities.<%= _Context %>;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
+using <%= _ProjectName %>.Core.Domain.Interfaces.Services.<%= _Context %>.<%= _Collection %>;
+using <%= _ProjectName %>.Core.Domain.Resources;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BAYSOFT.Core.Application.Default.Samples.Commands.DeleteSample
+namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %>.Commands.Delete<%= _Entity %>
 {
-    public class DeleteSampleCommandHandler : ApplicationRequestHandler<Sample, DeleteSampleCommand, DeleteSampleCommandResponse>
+    public class Delete<%= _Entity %>CommandHandler : ApplicationRequestHandler<<%= _Entity %>, Delete<%= _Entity %>Command, Delete<%= _Entity %>CommandResponse>
     {
         private IStringLocalizer MessagesLocalizer { get; set; }
-        private IStringLocalizer EntitiesDefaultLocalizer { get; set; }
-        public IDefaultDbContext Context { get; set; }
-        private IDeleteSampleService DeleteService { get; set; }
-        public DeleteSampleCommandHandler(
+        private IStringLocalizer Entities<%= _Context %>Localizer { get; set; }
+        public I<%= _Context %>DbContext Context { get; set; }
+        private IDelete<%= _Entity %>Service DeleteService { get; set; }
+        public Delete<%= _Entity %>CommandHandler(
             IStringLocalizer<Messages> messagesLocalizer,
-            IStringLocalizer<EntitiesDefault> entitiesDefaultLocalizer,
-            IDefaultDbContext context,
-            IDeleteSampleService deleteService)
+            IStringLocalizer<Entities<%= _Context %>> entities<%= _Context %>Localizer,
+            I<%= _Context %>DbContext context,
+            IDelete<%= _Entity %>Service deleteService)
         {
             MessagesLocalizer = messagesLocalizer;
-            EntitiesDefaultLocalizer = entitiesDefaultLocalizer;
+            Entities<%= _Context %>Localizer = entities<%= _Context %>Localizer;
             Context = context;
             DeleteService = deleteService;
         }
-        public override async Task<DeleteSampleCommandResponse> Handle(DeleteSampleCommand request, CancellationToken cancellationToken)
+        public override async Task<Delete<%= _Entity %>CommandResponse> Handle(Delete<%= _Entity %>Command request, CancellationToken cancellationToken)
         {
             var id = request.Project(x => x.Id);
 
-            var data = await Context.Samples.SingleOrDefaultAsync(x => x.Id == id);
+            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.Id == id);
 
             if (data == null)
             {
-                throw new Exception(string.Format(MessagesLocalizer["{0} not found!"], EntitiesDefaultLocalizer[nameof(Sample)]));
+                throw new Exception(string.Format(MessagesLocalizer["{0} not found!"], Entities<%= _Context %>Localizer[nameof(<%= _Entity %>)]));
             }
 
             await DeleteService.Run(data);
 
             await Context.SaveChangesAsync();
 
-            return new DeleteSampleCommandResponse(request, data, MessagesLocalizer["Successful operation!"], 1);
+            return new Delete<%= _Entity %>CommandResponse(request, data, MessagesLocalizer["Successful operation!"], 1);
         }
     }
 }

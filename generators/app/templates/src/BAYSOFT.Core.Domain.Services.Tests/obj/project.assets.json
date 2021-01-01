@@ -2803,12 +2803,12 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "BAYSOFT.Core.Domain/1.0.0": {
+      "<%= _ProjectName %>.Core.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "BAYSOFT.Abstractions": "1.0.0-beta",
-          "BAYSOFT.Core.Domain.Entities": "1.0.0",
+          "<%= _ProjectName %>.Core.Domain.Entities": "1.0.0",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
@@ -2816,13 +2816,13 @@
           "Microsoft.Extensions.DependencyInjection": "5.0.0"
         },
         "compile": {
-          "bin/placeholder/BAYSOFT.Core.Domain.dll": {}
+          "bin/placeholder/<%= _ProjectName %>.Core.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BAYSOFT.Core.Domain.dll": {}
+          "bin/placeholder/<%= _ProjectName %>.Core.Domain.dll": {}
         }
       },
-      "BAYSOFT.Core.Domain.Entities/1.0.0": {
+      "<%= _ProjectName %>.Core.Domain.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -2834,20 +2834,20 @@
           "Microsoft.Extensions.DependencyInjection": "5.0.0"
         },
         "compile": {
-          "bin/placeholder/BAYSOFT.Core.Domain.Entities.dll": {}
+          "bin/placeholder/<%= _ProjectName %>.Core.Domain.Entities.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BAYSOFT.Core.Domain.Entities.dll": {}
+          "bin/placeholder/<%= _ProjectName %>.Core.Domain.Entities.dll": {}
         }
       },
-      "BAYSOFT.Core.Domain.Services/1.0.0": {
+      "<%= _ProjectName %>.Core.Domain.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "BAYSOFT.Abstractions": "1.0.0-beta",
-          "BAYSOFT.Core.Domain": "1.0.0",
-          "BAYSOFT.Core.Domain.Entities": "1.0.0",
-          "BAYSOFT.Core.Domain.Validations": "1.0.0",
+          "<%= _ProjectName %>.Core.Domain": "1.0.0",
+          "<%= _ProjectName %>.Core.Domain.Entities": "1.0.0",
+          "<%= _ProjectName %>.Core.Domain.Validations": "1.0.0",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
@@ -2855,19 +2855,19 @@
           "Microsoft.Extensions.DependencyInjection": "5.0.0"
         },
         "compile": {
-          "bin/placeholder/BAYSOFT.Core.Domain.Services.dll": {}
+          "bin/placeholder/<%= _ProjectName %>.Core.Domain.Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BAYSOFT.Core.Domain.Services.dll": {}
+          "bin/placeholder/<%= _ProjectName %>.Core.Domain.Services.dll": {}
         }
       },
-      "BAYSOFT.Core.Domain.Validations/1.0.0": {
+      "<%= _ProjectName %>.Core.Domain.Validations/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "BAYSOFT.Abstractions": "1.0.0-beta",
-          "BAYSOFT.Core.Domain": "1.0.0",
-          "BAYSOFT.Core.Domain.Entities": "1.0.0",
+          "<%= _ProjectName %>.Core.Domain": "1.0.0",
+          "<%= _ProjectName %>.Core.Domain.Entities": "1.0.0",
           "FluentValidation": "9.3.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
@@ -2876,10 +2876,10 @@
           "NetDevPack": "1.1.0"
         },
         "compile": {
-          "bin/placeholder/BAYSOFT.Core.Domain.Validations.dll": {}
+          "bin/placeholder/<%= _ProjectName %>.Core.Domain.Validations.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BAYSOFT.Core.Domain.Validations.dll": {}
+          "bin/placeholder/<%= _ProjectName %>.Core.Domain.Validations.dll": {}
         }
       }
     }
@@ -9009,33 +9009,33 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "BAYSOFT.Core.Domain/1.0.0": {
+    "<%= _ProjectName %>.Core.Domain/1.0.0": {
       "type": "project",
-      "path": "../BAYSOFT.Core.Domain/BAYSOFT.Core.Domain.csproj",
-      "msbuildProject": "../BAYSOFT.Core.Domain/BAYSOFT.Core.Domain.csproj"
+      "path": "../<%= _ProjectName %>.Core.Domain/<%= _ProjectName %>.Core.Domain.csproj",
+      "msbuildProject": "../<%= _ProjectName %>.Core.Domain/<%= _ProjectName %>.Core.Domain.csproj"
     },
-    "BAYSOFT.Core.Domain.Entities/1.0.0": {
+    "<%= _ProjectName %>.Core.Domain.Entities/1.0.0": {
       "type": "project",
-      "path": "../BAYSOFT.Core.Domain.Entities/BAYSOFT.Core.Domain.Entities.csproj",
-      "msbuildProject": "../BAYSOFT.Core.Domain.Entities/BAYSOFT.Core.Domain.Entities.csproj"
+      "path": "../<%= _ProjectName %>.Core.Domain.Entities/<%= _ProjectName %>.Core.Domain.Entities.csproj",
+      "msbuildProject": "../<%= _ProjectName %>.Core.Domain.Entities/<%= _ProjectName %>.Core.Domain.Entities.csproj"
     },
-    "BAYSOFT.Core.Domain.Services/1.0.0": {
+    "<%= _ProjectName %>.Core.Domain.Services/1.0.0": {
       "type": "project",
-      "path": "../BAYSOFT.Core.Domain.Services/BAYSOFT.Core.Domain.Services.csproj",
-      "msbuildProject": "../BAYSOFT.Core.Domain.Services/BAYSOFT.Core.Domain.Services.csproj"
+      "path": "../<%= _ProjectName %>.Core.Domain.Services/<%= _ProjectName %>.Core.Domain.Services.csproj",
+      "msbuildProject": "../<%= _ProjectName %>.Core.Domain.Services/<%= _ProjectName %>.Core.Domain.Services.csproj"
     },
-    "BAYSOFT.Core.Domain.Validations/1.0.0": {
+    "<%= _ProjectName %>.Core.Domain.Validations/1.0.0": {
       "type": "project",
-      "path": "../BAYSOFT.Core.Domain.Validations/BAYSOFT.Core.Domain.Validations.csproj",
-      "msbuildProject": "../BAYSOFT.Core.Domain.Validations/BAYSOFT.Core.Domain.Validations.csproj"
+      "path": "../<%= _ProjectName %>.Core.Domain.Validations/<%= _ProjectName %>.Core.Domain.Validations.csproj",
+      "msbuildProject": "../<%= _ProjectName %>.Core.Domain.Validations/<%= _ProjectName %>.Core.Domain.Validations.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "BAYSOFT.Abstractions >= 1.0.0-beta",
-      "BAYSOFT.Core.Domain >= 1.0.0",
-      "BAYSOFT.Core.Domain.Entities >= 1.0.0",
-      "BAYSOFT.Core.Domain.Services >= 1.0.0",
+      "<%= _ProjectName %>.Core.Domain >= 1.0.0",
+      "<%= _ProjectName %>.Core.Domain.Entities >= 1.0.0",
+      "<%= _ProjectName %>.Core.Domain.Services >= 1.0.0",
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
@@ -9051,11 +9051,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Services.Tests\\BAYSOFT.Core.Domain.Services.Tests.csproj",
-      "projectName": "BAYSOFT.Core.Domain.Services.Tests",
-      "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Services.Tests\\BAYSOFT.Core.Domain.Services.Tests.csproj",
+      "projectUniqueName": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Services.Tests\\<%= _ProjectName %>.Core.Domain.Services.Tests.csproj",
+      "projectName": "<%= _ProjectName %>.Core.Domain.Services.Tests",
+      "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Services.Tests\\<%= _ProjectName %>.Core.Domain.Services.Tests.csproj",
       "packagesPath": "C:\\Users\\italo\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Services.Tests\\obj\\",
+      "outputPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Services.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9075,14 +9075,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj": {
-              "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Entities\\BAYSOFT.Core.Domain.Entities.csproj"
+            "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj": {
+              "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Entities\\<%= _ProjectName %>.Core.Domain.Entities.csproj"
             },
-            "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Services\\BAYSOFT.Core.Domain.Services.csproj": {
-              "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain.Services\\BAYSOFT.Core.Domain.Services.csproj"
+            "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Services\\<%= _ProjectName %>.Core.Domain.Services.csproj": {
+              "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain.Services\\<%= _ProjectName %>.Core.Domain.Services.csproj"
             },
-            "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain\\BAYSOFT.Core.Domain.csproj": {
-              "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\BAYSOFT.Core.Domain\\BAYSOFT.Core.Domain.csproj"
+            "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain\\<%= _ProjectName %>.Core.Domain.csproj": {
+              "projectPath": "C:\\Projetos\\GitHub\\isilveira\\template-architecture-cqrsflib\\src\\<%= _ProjectName %>.Core.Domain\\<%= _ProjectName %>.Core.Domain.csproj"
             }
           }
         }
