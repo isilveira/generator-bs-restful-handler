@@ -49,7 +49,7 @@ module.exports = class extends Generator {
     for (var i = 0; i < entities.length; i++) {
       var entityParts = entities[i].trim().split(".");
       var entity = entityParts[0];
-      var entityIDParts = (entityParts[1] ? entityParts[1] : 'Id')
+      var entityIDParts = (entityParts[1] ? entityParts[1] : "Id")
         .trim()
         .split(":");
       var entityID = entityIDParts[0];
@@ -367,7 +367,12 @@ module.exports = class extends Generator {
     this.copyGenericFile(
       _data,
       path.join(_root("BAYSOFT"), dContext, oldCollection, oldFile),
-      path.join(_root(_data._ProjectName), _data._Context, newCollection, newFile)
+      path.join(
+        _root(_data._ProjectName),
+        _data._Context,
+        newCollection,
+        newFile
+      )
     );
   }
 
