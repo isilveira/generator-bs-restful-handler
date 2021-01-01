@@ -1,0 +1,14 @@
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\bin\Debug\net5.0\BAYSOFT.Core.Domain.Entities.deps.json
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\bin\Debug\net5.0\BAYSOFT.Core.Domain.Entities.runtimeconfig.json
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\bin\Debug\net5.0\BAYSOFT.Core.Domain.Entities.runtimeconfig.dev.json
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\bin\Debug\net5.0\BAYSOFT.Core.Domain.Entities.dll
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\bin\Debug\net5.0\ref\BAYSOFT.Core.Domain.Entities.dll
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\bin\Debug\net5.0\BAYSOFT.Core.Domain.Entities.pdb
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\obj\Debug\net5.0\BAYSOFT.Core.Domain.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\obj\Debug\net5.0\BAYSOFT.Core.Domain.Entities.AssemblyInfoInputs.cache
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\obj\Debug\net5.0\BAYSOFT.Core.Domain.Entities.AssemblyInfo.cs
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\obj\Debug\net5.0\BAYSOFT.Core.Domain.Entities.csproj.CoreCompileInputs.cache
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\obj\Debug\net5.0\BAYSOFT.Core.Domain.Entities.dll
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\obj\Debug\net5.0\ref\BAYSOFT.Core.Domain.Entities.dll
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\obj\Debug\net5.0\BAYSOFT.Core.Domain.Entities.pdb
+C:\Projetos\GitHub\isilveira\template-architecture-cqrsflib\src\BAYSOFT.Core.Domain.Entities\obj\Debug\net5.0\BAYSOFT.Core.Domain.Entities.genruntimeconfig.cache
