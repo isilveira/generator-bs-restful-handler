@@ -32,7 +32,7 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "_EntityName",
-        message: "Entities info (Entity.{EntityID:{Type}};)?",
+        message: "Entities info (Entity.{Id:{Type}};)?",
         default: "Sample"
       }
     ];
@@ -49,7 +49,7 @@ module.exports = class extends Generator {
     for (var i = 0; i < entities.length; i++) {
       var entityParts = entities[i].trim().split(".");
       var entity = entityParts[0];
-      var entityIDParts = (entityParts[1] ? entityParts[1] : `${entity}ID`)
+      var entityIDParts = (entityParts[1] ? entityParts[1] : 'Id')
         .trim()
         .split(":");
       var entityID = entityIDParts[0];
