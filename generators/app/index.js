@@ -58,7 +58,6 @@ module.exports = class extends Generator {
       var data = {
         _ProjectName: this.props._ProjectName,
         _Context: this.props._ContextName,
-        _ContextType: this.iDbContext(this.props._ContextName),
         _Collection: pluralize(entity.trim()),
         _Entity: entity.trim(),
         _EntityID: entityID.trim(),
@@ -379,10 +378,6 @@ module.exports = class extends Generator {
       this.destinationPath(_fpFilenameDestino),
       _data
     );
-  }
-
-  iDbContext(name) {
-    return `I${name}DbContext`;
   }
 
   entityPath(project) {
