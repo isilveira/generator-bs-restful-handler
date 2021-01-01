@@ -31,9 +31,9 @@ namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %
         }
         public override async Task<Patch<%= _Entity %>CommandResponse> Handle(Patch<%= _Entity %>Command request, CancellationToken cancellationToken)
         {
-            var id = request.Project(x => x.Id);
+            var id = request.Project(x => x.<%= _EntityID %>);
 
-            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.Id == id);
+            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.<%= _EntityID %> == id);
 
             if (data == null)
             {

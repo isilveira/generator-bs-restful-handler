@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace <%= _ProjectName %>.Core.Domain.Interfaces.Infrastructures.Services
 {
-    public interface IEmailService
+    public <%= _EntityIDType %>erface IEmailService
     {
     }
 }

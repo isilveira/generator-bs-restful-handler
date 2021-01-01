@@ -7,7 +7,7 @@ namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %
     {
         public Patch<%= _Entity %>Command()
         {
-            ConfigKeys(x => x.Id);
+            ConfigKeys(x => x.<%= _EntityID %>);
 
             // Configures supressed properties & response properties
             //ConfigSuppressedProperties(x => x);

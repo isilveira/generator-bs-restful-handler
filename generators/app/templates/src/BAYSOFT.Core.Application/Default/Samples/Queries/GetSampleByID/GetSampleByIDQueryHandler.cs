@@ -29,10 +29,10 @@ namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %
         }
         public override async Task<Get<%= _Entity %>ByIDQueryResponse> Handle(Get<%= _Entity %>ByIDQuery request, CancellationToken cancellationToken)
         {
-            var id = request.Project(x => x.Id);
+            var id = request.Project(x => x.<%= _EntityID %>);
 
             var data = await Context.<%= _Collection %>
-                .Where(x => x.Id == id)
+                .Where(x => x.<%= _EntityID %> == id)
                 .Select(request)
                 .AsNoTracking()
                 .SingleOrDefaultAsync();

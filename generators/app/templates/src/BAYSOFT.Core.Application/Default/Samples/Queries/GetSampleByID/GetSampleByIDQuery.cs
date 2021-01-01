@@ -7,7 +7,7 @@ namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %
     {
         public Get<%= _Entity %>ByIDQuery()
         {
-            ConfigKeys(x => x.Id);
+            ConfigKeys(x => x.<%= _EntityID %>);
             
             // Configures supressed properties & response properties
             //ConfigSuppressedProperties(x => x);

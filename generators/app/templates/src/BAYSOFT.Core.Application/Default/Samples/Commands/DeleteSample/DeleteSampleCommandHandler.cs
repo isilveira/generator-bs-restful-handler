@@ -30,9 +30,9 @@ namespace <%= _ProjectName %>.Core.Application.<%= _Context %>.<%= _Collection %
         }
         public override async Task<Delete<%= _Entity %>CommandResponse> Handle(Delete<%= _Entity %>Command request, CancellationToken cancellationToken)
         {
-            var id = request.Project(x => x.Id);
+            var id = request.Project(x => x.<%= _EntityID %>);
 
-            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.Id == id);
+            var data = await Context.<%= _Collection %>.SingleOrDefaultAsync(x => x.<%= _EntityID %> == id);
 
             if (data == null)
             {

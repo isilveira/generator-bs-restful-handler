@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace <%= _ProjectName %>.Core.Domain.Services.Tests
 {
-    internal static class MockDbSetExtension
+    <%= _EntityIDType %>ernal static class MockDbSetExtension
     {
-        internal static Mock<DbSet<T>> MockDbSet<T>(this IQueryable<T> source)
+        <%= _EntityIDType %>ernal static Mock<DbSet<T>> MockDbSet<T>(this IQueryable<T> source)
            where T : class
         {
             var mock = new Mock<DbSet<T>>();

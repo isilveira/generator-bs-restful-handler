@@ -7,13 +7,13 @@ using System.Linq;
 
 namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Collection %>
 {
-    internal static class AddMocked<%= _Collection %>Extensions
+    <%= _EntityIDType %>ernal static class AddMocked<%= _Collection %>Extensions
     {
         private static IQueryable<<%= _Entity %>> Get<%= _Collection %>Collection()
         {
             return new List<<%= _Entity %>> {
-                new <%= _Entity %> { Id = 1, },
-                new <%= _Entity %> { Id = 2, },
+                new <%= _Entity %> { <%= _EntityID %> = 1, },
+                new <%= _Entity %> { <%= _EntityID %> = 2, },
             }.AsQueryable();
         }
 
@@ -26,7 +26,7 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
             return mockedDbSet<%= _Collection %>;
         }
 
-        internal static Mock<I<%= _Context %>DbContext> AddMocked<%= _Collection %>(this Mock<I<%= _Context %>DbContext> mockedDbContext)
+        <%= _EntityIDType %>ernal static Mock<I<%= _Context %>DbContext> AddMocked<%= _Collection %>(this Mock<I<%= _Context %>DbContext> mockedDbContext)
         {
             var mockedDbSet<%= _Collection %> = GetMockedDbSet<%= _Collection %>();
 
@@ -37,7 +37,7 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
             return mockedDbContext;
         }
 
-        internal static Mock<I<%= _Context %>DbContextQuery> AddMocked<%= _Collection %>(this Mock<I<%= _Context %>DbContextQuery> mockedDbContextQuery)
+        <%= _EntityIDType %>ernal static Mock<I<%= _Context %>DbContextQuery> AddMocked<%= _Collection %>(this Mock<I<%= _Context %>DbContextQuery> mockedDbContextQuery)
         {
             var mockedDbSet<%= _Collection %> = GetMockedDbSet<%= _Collection %>();
 

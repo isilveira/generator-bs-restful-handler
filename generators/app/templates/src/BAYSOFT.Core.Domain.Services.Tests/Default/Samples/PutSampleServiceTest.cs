@@ -53,7 +53,7 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>.<%= _Co
 
             var mocked<%= _Entity %> = new <%= _Entity %>
             {
-                Id = 1,
+                <%= _EntityID %> = 1,
             };
 
             await mockedPut<%= _Entity %>Service.Run(mocked<%= _Entity %>);

@@ -9,13 +9,13 @@ namespace <%= _ProjectName %>.Infrastructures.Data.EntityMappings.<%= _Context %
         public void Configure(EntityTypeBuilder<<%= _Entity %>> builder)
         {
             builder
-                .Property<int>("Id")
+                .Property<<%= _EntityIDType %>>("<%= _EntityID %>")
                 .ValueGeneratedOnAdd()
-                .HasColumnType("int")
-                .UseIdentityColumn();
+                .HasColumnType("<%= _EntityIDType %>")
+                .Use<%= _EntityID %>entityColumn();
 
             builder
-                .HasKey("Id");
+                .HasKey("<%= _EntityID %>");
 
             builder
                 .ToTable("<%= _Collection %>");

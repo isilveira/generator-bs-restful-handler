@@ -104,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtime<%= _EntityID %>entifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\Runtime<%= _EntityID %>entifierGraph.json"
         }
       }
     },
@@ -193,7 +193,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtime<%= _EntityID %>entifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\Runtime<%= _EntityID %>entifierGraph.json"
         }
       }
     },
@@ -286,7 +286,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtime<%= _EntityID %>entifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\Runtime<%= _EntityID %>entifierGraph.json"
         }
       }
     }
