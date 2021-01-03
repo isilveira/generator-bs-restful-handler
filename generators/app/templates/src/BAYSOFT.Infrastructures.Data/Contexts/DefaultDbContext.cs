@@ -7,8 +7,6 @@ namespace <%= _ProjectName %>.Infrastructures.Data.Contexts
 {
     public class <%= _Context %>DbContext : DbContext, I<%= _Context %>DbContext
     {
-        public DbSet<<%= _Entity %>> <%= _Collection %> { get; set; }
-
         protected <%= _Context %>DbContext()
         {
             Database.Migrate();
@@ -20,7 +18,6 @@ namespace <%= _ProjectName %>.Infrastructures.Data.Contexts
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new <%= _Entity %>Map());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace <%= _ProjectName %>.Infrastructures.Data.EntityMappings.<%= _Context %
                 .Property<<%= _EntityIDType %>>("<%= _EntityID %>")
                 .ValueGeneratedOnAdd()
                 .HasColumnType("<%= _EntityIDType %>")
-                .Use<%= _EntityID %>entityColumn();
+                .UseIdentityColumn();
 
             builder
                 .HasKey("<%= _EntityID %>");

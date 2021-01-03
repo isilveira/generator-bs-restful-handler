@@ -5,13 +5,13 @@ namespace <%= _ProjectName %>.Core.Domain.Services.Tests.<%= _Context %>
 {
     public static class Mock<%= _Context %>Helper
     {
-        <%= _EntityIDType %>ernal static Mock<I<%= _Context %>DbContext> GetMockedDbContext()
+        internal static Mock<I<%= _Context %>DbContext> GetMockedDbContext()
         {
             var mockedDbContext = new Mock<I<%= _Context %>DbContext>();
 
             return mockedDbContext;
         }
-        <%= _EntityIDType %>ernal static Mock<I<%= _Context %>DbContextQuery> GetMockedDbContextQuery()
+        internal static Mock<I<%= _Context %>DbContextQuery> GetMockedDbContextQuery()
         {
             var mockedDbContextQuery = new Mock<I<%= _Context %>DbContextQuery>();
 
