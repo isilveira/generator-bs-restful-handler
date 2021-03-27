@@ -12,7 +12,7 @@ namespace <%= _ProjectName %>.Infrastructures.Data.Contexts
             Database.Migrate();
         }
 
-        public <%= _Context %>DbContext(DbContextOptions options) : base(options)
+        public <%= _Context %>DbContext(DbContextOptions<<%= _Context %>DbContext> options) : base(options)
         {
             Database.Migrate();
         }
