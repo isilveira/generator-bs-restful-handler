@@ -274,81 +274,21 @@ module.exports = class extends Generator {
     var _entities = this.props._EntityName.split(";");
 
     for (var i = 0; i < _entities.length; i++) {
-      var entityParts = _entities[i].trim().split(".");
-      var _entity = entityParts[0];
-      var entityIDParts = (entityParts[1] ? entityParts[1] : "Id")
-        .trim()
-        .split(":");
-      var _entityID = entityIDParts[0];
-      var _entityIDType = entityIDParts[1] ? entityIDParts[1] : "int";
-      
-      var entity = {
-        name: _entity,
-        id: _entityID,
-        idType: _entityIDType,
-        requests:[],
-        context: project.contexts[0],
-        data: {
-          old: {
-            _ProjectName: "BAYSOFT",
-            _Context: "Default",
-            _Collection: "Samples",
-            _Entity: "Sample",
-            _EntityID: "Id",
-            _EntityIDType: "int",
-          },
-          new: {
-            _ProjectName: this.props._ProjectName,
-            _Context: this.props._ContextName,
-            _Collection: pluralize(_entity.trim()),
-            _Entity: _entity.trim(),
-            _EntityID: _entityID.trim(),
-            _EntityIDType: _entityIDType.trim(),
-          },
-        },
-        getFiles: function(program) {
-          program.log(this.name);
-          var project = this.context.project;
-          
-          program.copyGenericFile(
-            this.data,
-            project.utilities.filePaths.entity(project.utilities, this.data.old),
-            project.utilities.filePaths.entity(project.utilities, this.data.new)
-          );
-          
-          program.copyGenericFile(
-            this.data,
-            project.utilities.filePaths.entityMap(project.utilities, this.data.old),
-            project.utilities.filePaths.entityMap(project.utilities, this.data.new)
-          );
-          
-          program.copyGenericFile(
-            this.data,
-            project.utilities.filePaths.testMock(project.utilities, this.data.old),
-            project.utilities.filePaths.testMock(project.utilities, this.data.new)
-          );
-          
-          program.copyGenericFile(
-            this.data,
-            project.utilities.filePaths.entityValidator(project.utilities, this.data.old),
-            project.utilities.filePaths.entityValidator(project.utilities, this.data.new)
-          );
-          
-          for (let index = 0; index < this.requests.length; index++) {
-            const request = this.requests[index];
-            request.getFiles(program);
-          }
-        }
-      };
-
-      var requestTypes = this.props._RequestType.split(";");
-      for (let x = 0; x < requestTypes.length; x++) {
-        const type = requestTypes[x].split(":")[0];
-        const name = requestTypes[x].split(":")[1];
-        var request = {
-          name: name,
-          type: type,
-          entity: entity,
+      if(_entities[i] != "") {
+        var entityParts = _entities[i].trim().split(".");
+        var _entity = entityParts[0];
+        var entityIDParts = (entityParts[1] ? entityParts[1] : "Id")
+          .trim()
+          .split(":");
+        var _entityID = entityIDParts[0];
+        var _entityIDType = entityIDParts[1] ? entityIDParts[1] : "int";
+        
+        var entity = {
+          name: _entity,
+          id: _entityID,
+          idType: _entityIDType,
+          requests:[],
+          context: project.contexts[0],
           data: {
             old: {
               _ProjectName: "BAYSOFT",
@@ -367,60 +307,124 @@ module.exports = class extends Generator {
               _EntityIDType: _entityIDType.trim(),
             },
           },
-          getFiles: function (program) {
+          getFiles: function(program) {
             program.log(this.name);
-            var context = this.entity.context;
-            var project = context.project;
-            if (this.type === "Command")
-            {
-              program.copyGenericFile(
-                this.data,
-                project.utilities.filePaths.domainValidator(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
-                project.utilities.filePaths.domainValidator(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
-              );
-
-              program.copyGenericFile(
-                this.data,
-                project.utilities.filePaths.domainServiceInterface(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
-                project.utilities.filePaths.domainServiceInterface(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
-              );
-
-              program.copyGenericFile(
-                this.data,
-                project.utilities.filePaths.domainService(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
-                project.utilities.filePaths.domainService(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
-              );
-
-              program.copyGenericFile(
-                this.data,
-                project.utilities.filePaths.domainServiceTest(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
-                project.utilities.filePaths.domainServiceTest(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
-              );
-            }
-
+            var project = this.context.project;
+            
             program.copyGenericFile(
               this.data,
-              project.utilities.filePaths.request(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
-              project.utilities.filePaths.request(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
-            );
-
-            program.copyGenericFile(
-              this.data,
-              project.utilities.filePaths.response(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
-              project.utilities.filePaths.response(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+              project.utilities.filePaths.entity(project.utilities, this.data.old),
+              project.utilities.filePaths.entity(project.utilities, this.data.new)
             );
             
             program.copyGenericFile(
               this.data,
-              project.utilities.filePaths.handler(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
-              project.utilities.filePaths.handler(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+              project.utilities.filePaths.entityMap(project.utilities, this.data.old),
+              project.utilities.filePaths.entityMap(project.utilities, this.data.new)
             );
-          },
+            
+            program.copyGenericFile(
+              this.data,
+              project.utilities.filePaths.testMock(project.utilities, this.data.old),
+              project.utilities.filePaths.testMock(project.utilities, this.data.new)
+            );
+            
+            program.copyGenericFile(
+              this.data,
+              project.utilities.filePaths.entityValidator(project.utilities, this.data.old),
+              project.utilities.filePaths.entityValidator(project.utilities, this.data.new)
+            );
+            
+            for (let index = 0; index < this.requests.length; index++) {
+              const request = this.requests[index];
+              request.getFiles(program);
+            }
+          }
         };
-        entity.requests.push(request);
-      }
 
-      project.contexts[0].entities.push(entity);
+        var requestTypes = this.props._RequestType.split(";");
+        for (let x = 0; x < requestTypes.length; x++) {
+          if(requestTypes[x] != "") {
+            const type = requestTypes[x].split(":")[0];
+            const name = requestTypes[x].split(":")[1];
+            var request = {
+              name: name,
+              type: type,
+              entity: entity,
+              data: {
+                old: {
+                  _ProjectName: "BAYSOFT",
+                  _Context: "Default",
+                  _Collection: "Samples",
+                  _Entity: "Sample",
+                  _EntityID: "Id",
+                  _EntityIDType: "int",
+                },
+                new: {
+                  _ProjectName: this.props._ProjectName,
+                  _Context: this.props._ContextName,
+                  _Collection: pluralize(_entity.trim()),
+                  _Entity: _entity.trim(),
+                  _EntityID: _entityID.trim(),
+                  _EntityIDType: _entityIDType.trim(),
+                },
+              },
+              getFiles: function (program) {
+                program.log(this.name);
+                var context = this.entity.context;
+                var project = context.project;
+                if (this.type === "Command")
+                {
+                  program.copyGenericFile(
+                    this.data,
+                    project.utilities.filePaths.domainValidator(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
+                    project.utilities.filePaths.domainValidator(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+                  );
+
+                  program.copyGenericFile(
+                    this.data,
+                    project.utilities.filePaths.domainServiceInterface(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
+                    project.utilities.filePaths.domainServiceInterface(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+                  );
+
+                  program.copyGenericFile(
+                    this.data,
+                    project.utilities.filePaths.domainService(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
+                    project.utilities.filePaths.domainService(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+                  );
+
+                  program.copyGenericFile(
+                    this.data,
+                    project.utilities.filePaths.domainServiceTest(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
+                    project.utilities.filePaths.domainServiceTest(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+                  );
+                }
+
+                program.copyGenericFile(
+                  this.data,
+                  project.utilities.filePaths.request(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
+                  project.utilities.filePaths.request(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+                );
+
+                program.copyGenericFile(
+                  this.data,
+                  project.utilities.filePaths.response(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
+                  project.utilities.filePaths.response(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+                );
+                
+                program.copyGenericFile(
+                  this.data,
+                  project.utilities.filePaths.handler(project.utilities, this.data.old, project.utilities.requestTypes[this.name]),
+                  project.utilities.filePaths.handler(project.utilities, this.data.new, project.utilities.requestTypes[this.name])
+                );
+              },
+            };
+            entity.requests.push(request);
+          }
+        }
+
+        project.contexts[0].entities.push(entity);
+      }
     }
 
     this.startCopy(project);
